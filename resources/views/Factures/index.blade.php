@@ -1,7 +1,7 @@
 @include('includes.header')
     <section>
         @foreach($factures as $facture)
-            <p>{{ $facture->Réf }}</p>
+            <p class="text-3xl font-bold underline">{{ $facture->Réf }}</p>
             <p>{{$facture->Titre}}</p>
             <p>{{$facture->Prix}}</p>
             <p>{{$facture->TVA}}</p>

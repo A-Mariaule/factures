@@ -9,5 +9,5 @@ class Facture extends Model
 {
     use HasFactory;
     protected $table = 'factures';
-    protected $filable = ['Réf', 'Titre', 'Prix', 'TVA', 'Total', 'Client'];
+    protected $fillable = ['Réf', 'Titre', 'Prix', 'TVA', 'Total', 'Client', 'created_at', 'updated_at'];
 }

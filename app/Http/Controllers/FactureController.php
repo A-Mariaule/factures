@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Facture;
-use Illuminate\Http\Request;
 use App\Http\Requests\CreatePostRequest;
 
 class FactureController extends Controller
@@ -29,8 +28,17 @@ class FactureController extends Controller
      */
     public function store(CreatePostRequest $request)
     {
-        Facture::create($request->all());
-        return redirect()->route('Factures.index')->with('success','Restaurant created successfully.');
+        Facture::create([
+            'Réf'=>$request['Réf'],
+            'Titre'=>$request['Titre'],
+            'Prix'=>$request['Prix'],
+            'TVA'=>$request['TVA'],
+            'Total'=>$request['Prix'] + (($request['Prix'] * $request['TVA'] / 100)),
+            'Client'=>$request['Client'],
+            'created_at'=>$request['created_at'],
+            'updated_at'=>$request['updated_at'],
+        ]);
+        return redirect()->route('Factures.index')->with('success','Facture created successfully.');
     }
 
     /**
@@ -54,8 +62,17 @@ class FactureController extends Controller
      */
     public function update(CreatePostRequest $request, string $id)
     {
-        Facture::findOrFail($id)->update($request->all());
-        return redirect()->route('factures.index')->with('success','Restaurant updated successfully.');
+        Facture::findOrFail($id)->update([
+            'Réf'=>$request['Réf'],
+            'Titre'=>$request['Titre'],
+            'Prix'=>$request['Prix'],
+            'TVA'=>$request['TVA'],
+            'Total'=>$request['Prix'] + (($request['Prix'] * $request['TVA'] / 100)),
+            'Client'=>$request['Client'],
+            'created_at'=>$request['created_at'],
+            'updated_at'=>$request['updated_at'],
+        ]);
+        return redirect()->route('Factures.index')->with('success','Restaurant updated successfully.');
     }
 
     /**

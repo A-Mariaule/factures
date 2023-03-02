@@ -26,8 +26,9 @@ class CreatePostRequest extends FormRequest
             'Titre' => 'required',
             'Prix' => 'required|numeric',
             'TVA' => 'required|numeric',
-            'Total' => 'required|numeric',
             'Client' => 'required',
+            'created_at' => 'required',
+            'updated_at' => 'required',
         ];
     }
 
@@ -40,8 +41,6 @@ class CreatePostRequest extends FormRequest
             'Prix.numeric' => 'Le prix doit être un nombre',
             'TVA.required' => 'La TVA est obligatoire',
             'TVA.numeric' => 'La TVA doit être un nombre',
-            'Total.required' => 'Le total est obligatoire',
-            'Total.numeric' => 'Le total doit être un nombre',
             'Client.required' => 'Le client est obligatoire',
         ];
     }
