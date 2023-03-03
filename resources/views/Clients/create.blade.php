@@ -9,26 +9,44 @@
         <div class="flex flex-col">
             <label for="Société">Société :</label>
             <input type="text" name="Société" id="Société" class="border">
+            @if($errors->has('Société'))
+                <span class="error">{{ $errors->first('Société') }}</span>
+            @endif
         </div>
         <div class="flex flex-col">
             <label for="Téléphone">Téléphone :</label>
             <input type="text" name="Téléphone" id="Téléphone" class="border">
+            @if ($errors->has('Téléphone'))
+                <span class="error">{{ $errors->first('Téléphone') }}</span>
+            @endif
         </div>
         <div class="flex flex-col">
             <label for="Email">Email :</label>
             <input type="email" name="Email" id="Email" class="border">
+            @if ($errors->has('Email'))
+                <span class="error">{{ $errors->first('Email') }}</span>
+            @endif
         </div>
         <div class="flex flex-col">
             <label for="Adresse">Adresse :</label>
             <input type="text" name="Adresse" id="Adresse" class="border">
+            @if ($errors->has('Adresse'))
+                <span class="error">{{ $errors->first('Adresse') }}</span>
+            @endif
         </div>
         <div class="flex flex-col">
             <label for="TVA">TVA :</label>
             <input type="text" name="TVA" id="TVA" class="border">
+            @if ($errors->has('TVA'))
+                <span class="error">{{ $errors->first('TVA') }}</span>
+            @endif
         </div>
         <div class="flex flex-col">
             <label for="Factures">Factures :</label>
             <input type="text" name="Factures" id="Factures" class="border" value="REF-002-114-25">
+            @if ($errors->has('Factures'))
+                <span class="error">{{ $errors->first('Factures') }}</span>
+            @endif
         </div>
         <input type="hidden" name="created_at" id="created_at" value="{{ date('Y-m-d H:i:s') }}">
         <input type="hidden" name="updated_at" id="updated_at" value="{{ date('Y-m-d H:i:s') }}">

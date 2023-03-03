@@ -81,6 +81,6 @@ class FactureController extends Controller
     public function destroy(string $id)
     {
         Facture::findOrFail($id)->delete();
-        return redirect()->route('factures.index')->with('success','Restaurant deleted successfully.');
+        return redirect()->route('Factures.index')->with('success','Restaurant deleted successfully.');
     }
 }
