@@ -82,6 +82,6 @@ class ClientController extends Controller
     public function destroy(string $id)
     {
         Client::findOrFail($id)->delete();
-        return redirect()->route('clients.index')->with('success','Restaurant deleted successfully.');
+        return redirect()->route('Clients.index')->with('success','Restaurant deleted successfully.');
     }
 }
