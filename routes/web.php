@@ -17,6 +17,7 @@ use App\Http\Controllers\HomeController;
 */
 
 //home
+Route::get('/',[HomeController::class, 'index']);
 Route::get('/home',[HomeController::class, 'index']);
 
 // routes factures
